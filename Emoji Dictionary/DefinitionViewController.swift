@@ -12,19 +12,26 @@ class DefinitionViewController: UIViewController {
 
     @IBOutlet weak var emojilabel: UILabel!
     
+    @IBOutlet weak var category: UILabel!
+    
+    @IBOutlet weak var birthYear: UILabel!
     
     @IBOutlet weak var emojidefinition: UILabel!
     
-    var emoji = "NO EMOJI"
+    var emoji : Emoji = Emoji()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        emojilabel.text  = emoji
+        emojilabel.text  = emoji.stringEmoji
         
-        emojidefinition.text = "hello"
+        emojidefinition.text = emoji.definition
+        
+        category.text = emoji.category
+        
+        birthYear.text = "Birth Year : \(emoji.birthYear)"
     }
     
 
